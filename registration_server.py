@@ -125,19 +125,24 @@ def registered():
     """
     # Get list of participants
     participants = Participant.query.order_by(Participant.last_name, Participant.first_name).with_entities(Participant.first_name, Participant.last_name, Participant.affiliation, Participant.in_person, Participant.site).all()
-    in_persons = [p for p in participants if p.site != "remote"]
-    n_in_person = len(in_persons)
-    n_remote = len(participants) - n_in_person
+    #in_persons = [p for p in participants if p.site != "remote"]
+    #n_in_person = len(in_persons)
 
     sites = {}
+    n_in_person = 0
     for p in participants:
         sites[p[4]] = sites.get(p[4],0) + 1
+        if p[4] != "remote": n_in_person += 1
         pass
+
+    n_remote = len(participants) - n_in_person
     
-    randomNote = f"type(participants) = {type(participants)}"
-    return render_template('participants.html', data=participants,
-                           n_in_person=n_in_person, n_remote=n_remote,
-                           sites=sites,note=randomNote)
+    return render_template('participants.html',
+                           data=participants,
+                           n_in_person=n_in_person,
+                           n_remote=n_remote,
+                           sites=sites,
+                           )
 
 
 if __name__ == '__main__':

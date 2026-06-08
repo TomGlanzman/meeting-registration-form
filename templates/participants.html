@@ -13,11 +13,28 @@
   <div class="container">
     <!-- <h2>LSST DESC Meeting participants</h2> -->
     <!-- <br> -->
-    Number of registered participants: {{data|length}} <br>
-    {{n_in_person}} in-person and {{n_remote}} remote <br>
+    Number of registered participants: {{data|length}}, with {{n_in_person}} in-person <br>
     Sites: {{sites}}<br>
-    Note: {{note}}
     <br>
+
+    <br>
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Site</th>
+          <th scope="col"># registrants</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in sites %}
+        <tr>
+          <td>{{item.site}}</td>
+          <td>{{item.tally}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+<br>
     <table class="table table-hover">
       <thead class="thead-light">
         <tr>
