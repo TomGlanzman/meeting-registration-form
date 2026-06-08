@@ -16,25 +16,6 @@
     Number of registered participants: {{data|length}}, with {{n_in_person}} attending in-person <br>
     as of {{timestamp}} UTC
 
-    <table class="table w-auto table-sm table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th style="width: auto;" scope="col">Site</th>
-          <th style="width: auto;" scope="col"># registrants</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in sites %}
-        <tr>
-          <td>{{item}}</td>
-          <td>{{sites[item]}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
-    <br><br>
-
     <style>
       table, th, td {
 	  border:1px solid black;
@@ -43,7 +24,7 @@
       }
       th {
 	  text-align: center;
-	  background-color: #333333;
+	  background-color: #555555;
 	  color: #ffffff;
       }
     </style>
@@ -59,7 +40,7 @@
         {% for item in sites %}
         <tr>
           <td>{{item}}</td>
-          <td>{{sites[item]}}</td>
+          <td align='right'>{{sites[item]}}</td>
         </tr>
         {% endfor %}
       </tbody>
