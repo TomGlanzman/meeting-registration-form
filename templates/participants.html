@@ -15,40 +15,44 @@
 
     <div class="row">
       <div class="col">
-    As of {{timestamp}} UTC there are {{data|length}}  registered participants, with {{n_in_person}} attending in-person <br>
+	{{timestamp}} UTC<br>
+	There are {{data|length}} registered participants, with {{n_in_person}} attending in-person <br>
       </div>
 
-      <div clas"col">
-    <style>
-      table, th, td {
-	  border:1px solid red;
-	  border-collapse: collapse;
-	  padding: 8px;
-      }
-      th {
-	  text-align: center;
-	  background-color: #eeeeee;
-	  color: #000000;
-      }
-    </style>
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Site</th>
-          <th># registrants</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in sites %}
-        <tr>
-          <td>{{item}}</td>
-          <td align='right'>{{sites[item]}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+      <div class="col">
+	<style>
+	  table, th, td {
+	      border:1px solid black;
+	      border-collapse: collapse;
+	      padding: 8px;
+	  }
+	  th {
+	      text-align: center;
+	      background-color: #eeeeee;
+	      color: #000000;
+	  }
+	</style>
+	
+	<table>
+	  <thead>
+            <tr>
+              <th>Site</th>
+              <th># registrants</th>
+            </tr>
+	  </thead>
+	  <tbody>
+            {% for item in sites %}
+            <tr>
+              <td>{{item}}</td>
+              <td align='right'>{{sites[item]}}</td>
+            </tr>
+            {% endfor %}
+	  </tbody>
+	</table>
       </div>
+      <div class="col"> </div>
+      <div class="col"> </div>
+      <div class="col"> </div>
     </div>
     
     <br><br>
