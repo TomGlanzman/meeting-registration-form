@@ -13,13 +13,12 @@
   <div class="container">
     <!-- <h2>LSST DESC Meeting participants</h2> -->
     <!-- <br> -->
-    Number of registered participants: {{data|length}}, with {{n_in_person}} in-person <br>
-    Sites: {{sites}}<br>
+    Number of registered participants: {{data|length}}, with {{n_in_person}} attending in-person <br>
     <br>
 
     <br>
-    <table>
-      <thead>
+    <table class="table">
+      <thead class="thead-light">
         <tr>
           <th scope="col">Site</th>
           <th scope="col"># registrants</th>
@@ -35,12 +34,12 @@
       </tbody>
     </table>
     
-    <br>
-    Data: {{data}}<br>
+    <p>
+
     <table class="table table-hover">
       <thead class="thead-light">
         <tr>
-          <th scope="col">First Namexx</th>
+          <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">Affiliation</th>
 	  <th scope="col">Site</th>
@@ -48,9 +47,8 @@
       </thead>
       <tbody>
         {% for item in data %}
-	{{item}} <br>
         <tr>
-          <td>{{item.first_nameyy}}</td>
+          <td>{{item.first_name}}</td>
           <td>{{item.last_name}}</td>
           <td>{{item.affiliation}}</td>
 	  <td>{{item.site}}</td>
