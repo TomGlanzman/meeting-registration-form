@@ -140,7 +140,7 @@ def registered():
 
     #timestamp = datetime.now()
     now = datetime.now()
-    timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = now.strftime("%Y-%m-%d %H:%M")
     
     return render_template('participants.html',
                            data=participants,
