@@ -138,7 +138,7 @@ def registered():
     site1 = "Paris"
     site2 = "remote"
 
-    randomNote = f"type(participants) = {type(participant)}"
+    randomNote = f"type(participants) = {type(participants)}"
     return render_template('participants.html', data=participants,
                            n_in_person=n_in_person, n_remote=n_remote,
                            sites="sites",note=randomNote)
