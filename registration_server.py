@@ -131,7 +131,7 @@ def registered():
 
     sites = {}
     for p in participants:
-        sites[participants.site] = sites.get(participants.site,0) + 1
+        #sites[participants.site] = sites.get(participants.site,0) + 1
         pass
     
     site0 = "Boston"
