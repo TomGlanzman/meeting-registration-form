@@ -137,9 +137,11 @@ def registered():
     site0 = "Boston"
     site1 = "Paris"
     site2 = "remote"
+
+    randomNote = f"type(participants) = {type(participant)}"
     return render_template('participants.html', data=participants,
                            n_in_person=n_in_person, n_remote=n_remote,
-                           sites=sites)
+                           sites="sites",note=randomNote)
 
 
 if __name__ == '__main__':
