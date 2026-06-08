@@ -128,12 +128,18 @@ def registered():
     in_persons = [p for p in participants if p.site != "remote"]
     n_in_person = len(in_persons)
     n_remote = len(participants) - n_in_person
+
+    sites = {}
+    for site in participants.site:
+        sites[site] = sites.get(site,0) + 1
+        pass
+    
     site0 = "Boston"
     site1 = "Paris"
     site2 = "remote"
     return render_template('participants.html', data=participants,
                            n_in_person=n_in_person, n_remote=n_remote,
-                           sites=[site0,site1,site2])
+                           sites)
 
 
 if __name__ == '__main__':
