@@ -131,17 +131,13 @@ def registered():
 
     sites = {}
     for p in participants:
-        #sites[participants.site] = sites.get(participants.site,0) + 1
+        sites[p[4]] = sites.get(p[4],0) + 1
         pass
     
-    site0 = "Boston"
-    site1 = "Paris"
-    site2 = "remote"
-
     randomNote = f"type(participants) = {type(participants)}"
     return render_template('participants.html', data=participants,
                            n_in_person=n_in_person, n_remote=n_remote,
-                           sites="sites",note=randomNote)
+                           sites=sites,note=randomNote)
 
 
 if __name__ == '__main__':
