@@ -138,7 +138,8 @@ def registered():
 
     sites = dict(sorted(sites.items()))
 
-    timestamp = datetime.now()
+    #timestamp = datetime.now()
+    timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
     
     return render_template('participants.html',
                            data=participants,
