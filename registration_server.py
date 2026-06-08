@@ -139,7 +139,7 @@ def registered():
     site2 = "remote"
     return render_template('participants.html', data=participants,
                            n_in_person=n_in_person, n_remote=n_remote,
-                           sites)
+                           sites=sites)
 
 
 if __name__ == '__main__':
