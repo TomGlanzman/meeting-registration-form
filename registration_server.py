@@ -123,7 +123,7 @@ def register():
 def registered():
     """Returns the list of registered participants
     """
-    import datetime as dt
+    from datetime import datetime
     # Get list of participants
     participants = Participant.query.order_by(Participant.last_name, Participant.first_name).with_entities(Participant.first_name, Participant.last_name, Participant.affiliation, Participant.in_person, Participant.site).all()
     #in_persons = [p for p in participants if p.site != "remote"]
@@ -140,7 +140,7 @@ def registered():
 
     n_remote = len(participants) - n_in_person
 
-    timestamp = dt.now()
+    timestamp = datetime.now()
     
     return render_template('participants.html',
                            data=participants,
