@@ -130,8 +130,8 @@ def registered():
     n_remote = len(participants) - n_in_person
 
     sites = {}
-    for site in participants.site:
-        sites[site] = sites.get(site,0) + 1
+    for p in participants:
+        sites[participants.site] = sites.get(participants.site,0) + 1
         pass
     
     site0 = "Boston"
