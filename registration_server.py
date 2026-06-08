@@ -135,6 +135,8 @@ def registered():
         if p[4] != "remote": n_in_person += 1
         pass
 
+    sites = dict(sorted(sites.items()))
+    
     n_remote = len(participants) - n_in_person
     
     return render_template('participants.html',
