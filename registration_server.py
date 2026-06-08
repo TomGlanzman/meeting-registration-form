@@ -138,14 +138,11 @@ def registered():
 
     sites = dict(sorted(sites.items()))
 
-    n_remote = len(participants) - n_in_person
-
     timestamp = datetime.now()
     
     return render_template('participants.html',
                            data=participants,
                            n_in_person=n_in_person,
-                           n_remote=n_remote,
                            sites=sites,
                            timestamp=timestamp
                            )
