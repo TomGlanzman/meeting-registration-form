@@ -13,26 +13,33 @@
   <div class="container">
     <h2>LSST DESC Meeting Registrants</h2>
 
+    <style>
+      table, th, td {
+	  border:1px solid black;
+	  border-collapse: collapse;
+	  padding: 8px;
+      }
+      th {
+	  text-align: center;
+	  background-color: #eeeeee;
+	  color: #000000;
+      }
+    </style>
+
     <div class="row">
       <div class="col-md-4">
-	{{timestamp}} UTC<br>
-	There are {{data|length}} registered participants, with {{n_in_person}} attending in-person <br>
+	<table>
+	  <tr>
+	    <td>{{timestamp}} UTC</td>
+	  </tr>
+	</table>
+	<ul>
+	  <li>{{data|length}} registered participants</li>
+	  <li>{{n_in_person}} attending in-person </li>
+	</ul>
       </div>
 
       <div class="col-md-8">
-	<style>
-	  table, th, td {
-	      border:1px solid black;
-	      border-collapse: collapse;
-	      padding: 8px;
-	  }
-	  th {
-	      text-align: center;
-	      background-color: #eeeeee;
-	      color: #000000;
-	  }
-	</style>
-	
 	<table>
 	  <thead>
             <tr>
